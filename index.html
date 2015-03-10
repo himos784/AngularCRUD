@@ -14,7 +14,7 @@
 				<br/>
 				<br/>
 				<br/>
-				<form ng-submit="dataSave(form_data_id)">
+				<form>
 					<div class="form-group">
 					    <label for="name">Name</label>
 					    <input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="form_data.name">
@@ -28,7 +28,8 @@
 					    <label for="email">Email</label>
 					    <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="form_data.email">
 					</div>
-					<button class="btn btn-primary {{form_status}}">Save</button>
+					<button class="btn btn-primary {{form_status}}" ng-click="dataSave(form_data_id)">Save</button>
+					<button class="btn btn-danger {{form_status}}" ng-click="dataCancel()">Cancel</button>
 				</form>
 			</div>
 			<div class="col-lg-9">

@@ -44,24 +44,28 @@ app.controller("MyController",['$scope',function($scope){
 	$scope.dataSave = function(id) {
 		if( id != "-"){
 			$scope.datas[id] = $scope.form_data;
-			$scope.form_data = {};
 			$scope.form_data_id = "-";
+			$scope.form_data = {};
 		}
 		else{
 	   		$scope.datas.push($scope.form_data);
-	    	$scope.form_data = {};
+			$scope.form_data = {};
 		}
-		$scope.form_status = "disabled";
+		$scope.dataCancel();
 	};
 
 	$scope.dataAdd = function() {
 		$scope.form_status = "";
-		alert($scope.form_status);
+	};
+
+	$scope.dataCancel = function() {
+		$scope.form_status = "disabled";
 	};
 
 	$scope.dataEdit = function(id) {
 		$scope.form_data_id = id;
 	    $scope.form_data = $scope.datas[id];
+		$scope.form_status = "";
 	};
 
 	$scope.dataDelete = function(id){
